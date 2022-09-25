@@ -20,20 +20,7 @@ spring:
             preLogger: true
             postLogger: true
       routes:
-        - id: first-service
+        - id: user-service
           uri: lb://USER-SERVICE
           predicates:
-            - Path=/first-service/**
-          filters:
-            - CustomFilter
-        - id: second-service
-          uri: lb://USER-SERVICE
-          predicates:
-            - Path=/second-service/**
-          filters:
-            - name: CustomFilter
-            - name: LoggingFilter
-              args:
-                baseMessage: Hi, there.
-                preLogger: true
-                postLogger: true
+            - Path=/user-service/**
